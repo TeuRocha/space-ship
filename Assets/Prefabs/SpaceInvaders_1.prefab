@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1879715909846092932}
   - component: {fileID: 6115564213586812198}
   - component: {fileID: 7274461539915865069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpaceInvaders_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 2132774916, guid: 13dc0039ee40f7945a82fd826a83c85f, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.19737887, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -199,3 +199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   scoreValue: 100
+  lifeTime: 4
+  floatAmplitude: 0.5
+  floatFrequency: 1

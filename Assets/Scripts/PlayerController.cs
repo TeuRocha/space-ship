@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,6 +30,22 @@ public class PlayerController : MonoBehaviour
         {
             nextFire = Time.time + fireRate;
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Verifica se o objeto com o qual colidimos tem a tag "Enemy"
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Wall"))
+        {
+            Debug.Log("Player atingido por um inimigo! Game Over.");
+
+            // Destrói o objeto do jogador
+            Destroy(gameObject);
+
+            // Carrega a cena de derrota
+            // Certifique-se de que o nome da cena está correto e que ela está nas Build Settings!
+            SceneManager.LoadScene("LoseScene");
         }
     }
 }
